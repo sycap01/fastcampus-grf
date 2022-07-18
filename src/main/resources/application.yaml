@@ -1,0 +1,11 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+ashley:
+  korean:
+    hello: "안녕하세요"
+  english:
+    hello: "HELLO"
