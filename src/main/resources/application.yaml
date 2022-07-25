@@ -3,9 +3,11 @@ management:
     web:
       exposure:
         include: "*"
+server:
+  port: 8081
 
 ashley:
   korean:
     hello: "안녕하세요"
   english:
-    hello: "HELLO"
+    hello: "HELLO000"
