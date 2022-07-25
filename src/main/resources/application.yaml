@@ -11,3 +11,10 @@ ashley:
     hello: "안녕하세요"
   english:
     hello: "HELLO000"
+#--------------
+#spring:
+#  profiles:
+#    active:
+#      on-profile:
+#        -produnction
+#        -real

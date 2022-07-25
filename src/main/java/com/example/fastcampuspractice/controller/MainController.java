@@ -2,13 +2,17 @@ package com.example.fastcampuspractice.controller;
 
 import com.example.fastcampuspractice.service.HelloService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
-@RestController
+//@RestController //response body embeded
+@Controller
+@Slf4j
 @RequiredArgsConstructor
 public class MainController {
     //서비스의 변경에서 부터 자유로 울수없다
@@ -17,10 +21,12 @@ public class MainController {
 
     @GetMapping("/api/main")
     public String main(@RequestParam String name, /*@RequestBody*/ AshleyRequest request) {
-
-        return helloService.sayHello(name);
+        String resultMessage = helloService.sayHello(name);
+        log.warn("auto");
+        return "main/index";
     }
 
+    @ResponseBody
     @PostMapping("/api/validation")
     public String validation(@Valid @RequestBody AshleyRequest request) {
         return "good";
