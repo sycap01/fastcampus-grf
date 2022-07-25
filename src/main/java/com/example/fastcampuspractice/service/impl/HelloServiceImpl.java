@@ -29,6 +29,6 @@ public class HelloServiceImpl implements HelloService {
         List<Integer> list = List.of(1, 2, 3, 4, 5);
 //        String helloFromEnv = env.getProperty("uno.korean.hello"); // type
 //        context.getEnvironment().getProperty("uno.korean.hello");
-        return ashleyProperties.english().hello()+", " + name + "!!!";
+        return ashleyProperties.english().hello()+", " + name;
     }
 }

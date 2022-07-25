@@ -4,6 +4,7 @@ import com.example.fastcampuspractice.service.HelloService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,10 +20,11 @@ public class MainController {
     // 아직은 의존성이 높지않음 , 존재자체가사라질때 혹은 이름이 아예바뀔때
     private final HelloService helloService; // member field
 
-    @GetMapping("/api/main")
-    public String main(@RequestParam String name, /*@RequestBody*/ AshleyRequest request) {
-        String resultMessage = helloService.sayHello(name);
+    @GetMapping("/main")
+    public String main(@RequestParam String name, ModelMap modelMap, /*@RequestBody*/ AshleyRequest request) {
+        String message = helloService.sayHello(name);
         log.warn("auto");
+        modelMap.addAttribute("message",message);
         return "main/index";
     }
 
